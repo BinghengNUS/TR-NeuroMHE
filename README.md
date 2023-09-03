@@ -50,7 +50,11 @@ The comparative results in terms of RMSE are summarized in the following table.
 ![RMSE_Comparison_NeuroBEM_test_dataset](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/1aec50f3-e1ea-4970-8f08-e0a483515da7)
 
 ### RMSE Reproduction
-1. In the folder '**Check_RMSE**',
+1. In the folder '**Check_RMSE**', run the MATLAB file '**RMSE_vector_error_TR_NeuroMHE.m**' to replicate the RMSE results presented in the above table. The results are obtained through vector error (i.e., $e_{f}=\sqrt{(d_{f_x}-\hat d_{f_x})^2 + (d_{f_y}-\hat d_{f_y})^2 + (d_{f_z}-\hat d_{f_z})^2}$) with the force vector expressed in the body frame. You can also run the corresponding Python files for the RMSE reproduction. These files have the same names as the MATLAB counterparts but end with '**.py**'.
+
+   Note that the residual force data provided in the NeuroBEM dataset (columns 36-38 in the file 'predictions.tar.xz') was computed using the initially reported mass of 0.752 kg [[1]](#1) instead of the later revised value of 0.772 kg (See the NeuroBEM's website). As a result, we refrain from utilizing this data to compute NeuroBEM's RMSE. The rest of the dataset remains unaffected, as the residual force data is provided purely for users' convenience. It can be calculated from the other provided data including the mass value, as explained on https://rpg.ifi.uzh.ch/neuro_bem/Readme.html.
+
+2. In the subfolder '**MATLAB_code_for_mass_verification**', run the MATLAB file '**residual_force_XXX.m**' to demonstrate the mass verification, where '**XXX**' represents the name of the test trajectory, such as '**3D_Circle_1**'.
 
 
 
