@@ -29,4 +29,24 @@ The training process for TR-NeuroMHE is both efficient and straightforward to se
 
 ### Training and Evaluation
 1. Download '**processed_data.zip**' and '**predictions.tat.xz**' from https://download.ifi.uzh.ch/rpg/NeuroBEM/. The former file is utilized for training TR-NeuroMHE, whereas the latter serves the purpose of evaluation and comparison with TR-NeuroBEM.
-2. Relocate the folder '**bem+nn**' from the decomprassed archive '**predictions.tat.xz**' to the downloaded folder '**SecVII-A (source code)**', and place the decompressed '**processed_data.zip**' within the folder '**Source Code_TR_NeuroMHE**' as well.
+2. Relocate the folder '**bem+nn**' from the decomprassed archive '**predictions.tat.xz**' to the downloaded folder '**SecVII-A (source code)**', and place the decompressed '**processed_data.zip**' within the folder '**Source_code_TR_NeuroMHE**' as well.
+3. Run the Python file '**main_code_trust_region_neuromhe.py**'.
+4. In the prompted terminal interface, you will be asked to select whether to train or evaluate TR-NeuroMHE.
+   * Training: type 'train' without the quotation mark in the terminal.
+   * Evaluation: type 'evaluate' without the quotation mark in the terminal. We evaluate and compare the estimation performance of TR-NeuroMHE with a state-of-the-art estimator, NeuroBEM [[1]](#1), on its complete test dataset. The testset includes 13 agile flight trajectories which were unseen in training. The following table summarizes the parameters of these trajectories. Note that you can skip the training process and directly evaluate the performance using the trained neural network model '**nn_para_TR_NeuroMHE_1.npy**' to reproduce the RMSE results presented in our paper. The retained model is saved in the folder '**trained_data**'.
+   
+|                                         Trajectory Parameters of NeuroBEM Test Dataset                                           |
+:----------------------------------------------------------------------------------------------------------------------------------:
+![test dataset](https://github.com/RCL-NUS/NeuroMHE/assets/70559054/afbdc415-288b-4938-8bc9-7b18c59d6f40)
+
+
+
+
+
+
+
+
+
+## References
+<a id="1">[1]</a> 
+L. Bauersfeld, E. Kaufmann, P. Foehn, S. Sun, and D. Scaramuzza, "NeuroBEM: Hybrid Aerodynamic Quadrotor Model", ROBOTICS: SCIENCE AND SYSTEM XVII,2021.
