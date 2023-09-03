@@ -40,7 +40,6 @@ The training process for TR-NeuroMHE is both efficient and straightforward to se
 ![test dataset](https://github.com/RCL-NUS/NeuroMHE/assets/70559054/afbdc415-288b-4938-8bc9-7b18c59d6f40)
 
 One advantage of NeuroBEM is that its accuracy only declines by 20% when the training dataset encompasses a limited portion of the velocity-range space compared to the test dataset. To assess the performance of our TR-NeuroMHE in this scenario, we select a extremely small flight segment (0.25 s) from an agile figure-8 trajectory, covering a limited velocity range of 8 m/s to 12 m/s. The following figures present a comparison of the velocity-range space in the world frame between the training sets and the partial test sets.
-
         Velocity-Range Space: Training Sets        |      Velocity-Range Space: Partial Test Sets
 :---------------------------------------------------------------:|:--------------------------------------------------------------:
 ![3d_velocityspace_training_very_slow](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/eb1fbea7-e0da-4f13-b689-156bdd721c8b) | ![3d_velocityspace_test](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/96b4075b-8b4d-49a4-a432-2e5d5e8050d6)
