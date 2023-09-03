@@ -11,7 +11,8 @@ The ***Trust-Region Neural Moving Horizon Estimation (TR-NeuroMHE)*** is an auto
       1. [Training and Evaluation](#Training-and-Evaluation)
       2. [RMSE Reproduction](#RMSE-Reproduction)
       3. [Applications to other robots](#Applications-to-other-robots)
-3. [Contact Us](#Contact-Us)
+3. [Acknowledgement](#Acknowledgement)
+4. [Contact Us](#Contact-Us)
 
 ## 1. Dependency Packages
 Please make sure that the following packages have already been installed before running the source code.
@@ -57,12 +58,19 @@ The comparative results in terms of RMSE are summarized in the following table.
 2. In the subfolder '**MATLAB_code_for_mass_verification**', run the MATLAB file '**residual_force_XXX.m**' to demonstrate the mass verification, where '**XXX**' represents the name of the test trajectory, such as '**3D_Circle_1**'.
 
 
+### Applications to other robots
+Please note that although we demonstrated the effectiveness of our approach using a quadrotor, the proposed method is general and can be applied to robust adaptive control for other robotic systems. Only minor modifications in our code are needed for such applications. To illustrate, we can take the source code in the folder '**Source_code_TR_NeuroMHE**' as an example and proceed as follows:
+   * Update the robotic dynamics model in the Python file '**Uav_Env.py**';
+   * Add a robotic controller in the Python file '**Uav_mhe_SL_Hessian_trust_region_neural.py**';
+   * Update the simulation environment for training and evaluation in the Python file '**main_code_trust_region_neuromhe.py**'.
 
+## 3. Acknowledgement
+We thank Leonard Bauersfeld for the help in using the flight dataset of NeuroBEM.
 
-
-
-
-
+## 4. Contact Us
+If you encounter a bug in your implementation of the code, please do not hesitate to inform me.
+* Name: Mr. Bingheng Wang
+* Email: wangbingheng@u.nus.edu
 
 ## References
 <a id="1">[1]</a> 
