@@ -29,7 +29,7 @@ dt_sample = 0.0025
 uav       = Uav_Env.quadrotor(Sys_para, dt_sample)
 uav.model()
 horizon   = 10
-key2      = '10'
+key3      = '10'
 # Learning rate
 lr_nn     = 1e-4
 
@@ -151,8 +151,8 @@ def Train():
     w_o          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_h*D_out),(1,D_h*D_out))
     # nn_para0     = np.hstack((b_1,b_2,b_o,w_1,w_2,w_o))
     # You can also use the saved initial network model (generated using the above initialization method)
-    key = input("enter '1', or '2',... no more than '10' without the quotation mark:")
-    nn_para0 = np.load('initial_TR_NeuroMHE_model/nn_para0_'+str(key)+'.npy')
+    key2 = input("enter '1', or '2',... no more than '10' without the quotation mark:")
+    nn_para0 = np.load('initial_TR_NeuroMHE_model/nn_para0_'+str(key2)+'.npy')
     # np.save('trained_data/nn_para0_4',nn_para0)
    
     # Sampling index (sample over every n data points from the real dataset)
@@ -359,7 +359,7 @@ def Train():
                     # Update the MHE estimate trajectory
                     xmhe_traj  = xmhe_traj_curr
                     noise_traj = noise_traj_curr
-                np.save('trained_data/nn_para_TR_NeuroMHE_'+str(key),nn_para)
+                np.save('trained_data/nn_para_TR_NeuroMHE_'+str(key2),nn_para)
                 # Sum the loss
                 loss = np.reshape(loss, (1))
                 sum_loss += loss
@@ -370,7 +370,7 @@ def Train():
         mean_loss = sum_loss / it
         mean_time = format(sum_time / (it-horizon-1),'.2f')
         print('Hess_cputime--- %s ms ---=',mean_time)
-        # np.save('Hessian_cputime_horizon/hess_runtime_N='+str(key2),mean_time)
+        # np.save('Hessian_cputime_horizon/hess_runtime_N='+str(key3),mean_time)
         if n_ep == 0:
             eps = mean_loss/10
         Mean_Loss += [mean_loss]
@@ -383,13 +383,13 @@ def Train():
         if not os.path.exists("trained_data"):
             os.makedirs("trained_data")
         
-        np.save('trained_data/Mean_loss_TR_NeuroMHE_'+str(key), Mean_Loss)
-        np.save('trained_data/Trained episodes_TR_NeuroMHE_'+str(key), Trained_episode)
+        np.save('trained_data/Mean_loss_TR_NeuroMHE_'+str(key2), Mean_Loss)
+        np.save('trained_data/Trained episodes_TR_NeuroMHE_'+str(key2), Trained_episode)
      
     # Loss function
     if n_ep>1:
         trainingtime = (TM.time() - start_time0)
-        np.save('trained_data/trainingtime_tr_neuromhe_'+str(key),trainingtime)
+        np.save('trained_data/trainingtime_tr_neuromhe_'+str(key2),trainingtime)
         print("trainingtime=--- %s s ---" % format(trainingtime,'.2f'))
     Dim_mean_loss = np.size(Mean_Loss)
     Trained = []
@@ -401,7 +401,7 @@ def Train():
     plt.xlabel('Number of episodes')
     plt.ylabel('Mean loss')
     plt.grid()
-    plt.savefig('trained_data/mean_loss_train_TR_NeuroMHE_'+str(key)+'.png',dpi=600)
+    plt.savefig('trained_data/mean_loss_train_TR_NeuroMHE_'+str(key2)+'.png',dpi=600)
     plt.show()
 
 
