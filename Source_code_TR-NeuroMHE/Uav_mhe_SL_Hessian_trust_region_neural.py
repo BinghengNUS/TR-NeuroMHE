@@ -598,7 +598,7 @@ class Trust_region:
         TRS_opt  = sol['f'].full()
         return wc_opt, TRS_opt
     
-    def TRS_solver_Eigen(self, Grad_dldn, Hess_dldn, radius):
+    def TRS_solver_Eigen(self, loss, Grad_dldn, Hess_dldn, radius):
         """
         Formulate TRS as a nonlinear programming problem solved by CasADi nlpsol() function
         """
@@ -626,7 +626,7 @@ class Trust_region:
         Lambda = np.diag(Eigenvalues)
 
         # Formulate the NLP
-        ltrs = Grad_dldn@Eigenvectors@wchange.T + 1/2*wchange@Lambda@wchange.T
+        ltrs =loss + Grad_dldn@Eigenvectors@wchange.T + 1/2*wchange@Lambda@wchange.T
         ltrs_fn = Function('lTRS',[wchange],[ltrs],['mu0'],['lTRSf'])
         J    = ltrs_fn(mu0=wchange)['lTRSf']
         # Inequality constraint
