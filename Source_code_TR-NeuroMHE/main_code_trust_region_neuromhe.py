@@ -336,7 +336,7 @@ def Train():
                     # Solve the trust-region system (TRS) to obtain the candidate weighting change (wc)
                     print('start to solve the large TR subproblem')
                     start_time = TM.time()
-                    wc_opt, TRS_opt = uavTRS.TRS_solver_Eigen(Grad_dldn, Hess_dldn, radius)
+                    wc_opt, TRS_opt = uavTRS.TRS_solver_Eigen(loss, Grad_dldn, Hess_dldn, radius)
                     TRStime = (TM.time() - start_time)
                     print("TRStime=--- %s s ---" % format(TRStime,'.2f'))
                     # Update the network weightings
