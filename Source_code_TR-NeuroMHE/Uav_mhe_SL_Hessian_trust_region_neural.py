@@ -663,7 +663,7 @@ class Trust_region:
     def TRS_radius(self,wc_opt,ratio,radius,t2,t3,chi1,chi2,upperb):
         if ratio<t2:
             radius_new = chi1*radius
-        elif ratio>t3 and LA.norm(wc_opt) == upperb:
+        elif ratio>t3 and LA.norm(wc_opt) == radius:
             radius_new = np.minimum(chi2*radius,upperb)
         else:
             radius_new = radius
