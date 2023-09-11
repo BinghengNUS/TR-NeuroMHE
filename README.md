@@ -49,7 +49,8 @@ One advantage of NeuroBEM is that its accuracy only declines by 20% when the tra
 The comparative results in terms of RMSE are summarized in the following table.
 |                               Estimation Errors (RMSES) Comparisons on the NeuroBEM Test Dataset                                 |
 :----------------------------------------------------------------------------------------------------------------------------------:
-![RMSE_Comparison_NeuroBEM_test_dataset](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/1aec50f3-e1ea-4970-8f08-e0a483515da7)
+![RMSE_Comparison_NeuroBEM_test_dataset](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/69d2a359-9eac-4eab-afec-d38d2661d573)
+
 
 ### RMSE Reproduction
 1. In the folder '**Check_RMSE**', run the MATLAB file '**RMSE_vector_error_TR_NeuroMHE.m**' to replicate the RMSE results presented in the above table. The results are obtained through vector error (i.e., $e_{f}=\sqrt{(d_{f_x}-\hat d_{f_x})^2 + (d_{f_y}-\hat d_{f_y})^2 + (d_{f_z}-\hat d_{f_z})^2}$) with the force vector expressed in the body frame. You can also run the corresponding Python files for the RMSE reproduction. These files have the same names as the MATLAB counterparts but end with '**.py**'.
