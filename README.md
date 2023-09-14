@@ -3,7 +3,9 @@ The ***Trust-Region Neural Moving Horizon Estimation (TR-NeuroMHE)*** is an auto
 
 |                                    Learning Piplines of The Proposed TR-NeuroMHE                                    |
 :------------------------------------------------------------------------------------------------------------:
-![diagram_github](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/ff7e13fb-f098-4505-beef-04a838e875a4)
+![plot_in_github](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/84707962-c0f2-40ac-ae6a-63287116c80c)
+
+Please find out more details in our paper https://arxiv.org/abs/2309.05955
 
 
 ## Table of contents
