@@ -1,11 +1,13 @@
 # TR-NeuroMHE
-The ***Trust-Region Neural Moving Horizon Estimation (TR-NeuroMHE)*** is an auto-tuning and adaptive optimal state estimator. It fuses a light-weight neural network with a control-theorectic MHE estimator to realize accurate estimation and fast online adaptation to environments. The neural network can be efficiently trained using the off-the-shelft trust-region method with an extremely small amount of data. Central to our method is the Hessian trajectory of the MHE optimization problem w.r.t the tunable parameters, which is computed recursively using a Kalman filter.
+The ***Trust-Region Neural Moving Horizon Estimation (TR-NeuroMHE)*** is an adaptive optimal state estimator tuned using the trust-region method. Accurate disturbance estimation is essential for safe robot operations. The recently proposed NeuroMHE, which uses a portable neural network to model the MHE's weightings, has shown promise in further pushing the accuracy and efficiency boundary. Currently, NeuroMHE is trained through gradient descent, with its gradient computed recursively using a Kalman filter. In this work, we show that much of computation already used to obtain the gradient, especially the Kalman filter, can be efficiently reused to compute the MHE Hessian for training TR-NeuroMHE.
 
 |                                    Learning Piplines of The Proposed TR-NeuroMHE                                    |
 :------------------------------------------------------------------------------------------------------------:
 ![plot_in_github](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/84707962-c0f2-40ac-ae6a-63287116c80c)
 
-Please find out more details in our paper https://arxiv.org/abs/2309.05955
+Please find out more details in 
+   * our paper https://arxiv.org/abs/2309.05955
+   * NeuroMHE trained using gradient descent https://github.com/RCL-NUS/NeuroMHE
 
 
 ## Table of contents
