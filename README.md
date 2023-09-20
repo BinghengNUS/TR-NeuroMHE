@@ -53,7 +53,8 @@ One advantage of NeuroBEM is that its accuracy only declines by 20% when the tra
 The comparative results in terms of RMSE are summarized in the following table.
 |                               Estimation Errors (RMSES) Comparisons on the NeuroBEM Test Dataset                                 |
 :----------------------------------------------------------------------------------------------------------------------------------:
-![RMSE_Comparison_NeuroBEM_test_dataset](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/69d2a359-9eac-4eab-afec-d38d2661d573)
+![RMSE_Comparison_NeuroBEM_test_dataset](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/0be22a1d-057a-4a20-83fb-a8701b1a8a57)
+
 
 
 ### RMSE Reproduction
