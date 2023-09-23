@@ -170,13 +170,13 @@ rmse_tz_bemnn  = format(mean_squared_error(Bemnn_tz, Gt_tz, squared=False),'.3f'
 
 
 
-print('--------------------------------RMSEs with scalar error (bold frame and m=0.772kg)------------------------------')
-print('----------------------------------------------------------------------------------------------------------------')
-print('Traj. | Method |   f_x   |   f_y   |   f_z   |   t_x   |   t_y   |   t_z   |   f_xy   |   t_xy   |   f   |   t')
-print('----------------------------------------------------------------------------------------------------------------')
-print(key, ' | NeuroBEM | ', rmse_fx_bemnn, ' | ', rmse_fy_bemnn,' | ',rmse_fz_bemnn, ' | ', rmse_tx_bemnn, ' | ', rmse_ty_bemnn, ' | ', rmse_tz_bemnn, ' | ', rmse_fxy_bemnn, ' | ', rmse_txy_bemnn, ' | ', rmse_f_bemnn, ' | ', rmse_t_bemnn)
-print(key, ' | NeuroMHE | ', rmse_fx, ' | ', rmse_fy, ' | ', rmse_fz, ' | ', rmse_tx, ' | ', rmse_ty, ' | ', rmse_tz, ' | ', rmse_fxy, ' | ', rmse_txy, ' | ', rmse_f, ' | ', rmse_t)
-print('----------------------------------------------------------------------------------------------------------------')
+# print('--------------------------------RMSEs with scalar error (bold frame and m=0.772kg)------------------------------')
+# print('----------------------------------------------------------------------------------------------------------------')
+# print('Traj. | Method |   f_x   |   f_y   |   f_z   |   t_x   |   t_y   |   t_z   |   f_xy   |   t_xy   |   f   |   t')
+# print('----------------------------------------------------------------------------------------------------------------')
+# print(key, ' | NeuroBEM | ', rmse_fx_bemnn, ' | ', rmse_fy_bemnn,' | ',rmse_fz_bemnn, ' | ', rmse_tx_bemnn, ' | ', rmse_ty_bemnn, ' | ', rmse_tz_bemnn, ' | ', rmse_fxy_bemnn, ' | ', rmse_txy_bemnn, ' | ', rmse_f_bemnn, ' | ', rmse_t_bemnn)
+# print(key, ' | NeuroMHE | ', rmse_fx, ' | ', rmse_fy, ' | ', rmse_fz, ' | ', rmse_tx, ' | ', rmse_ty, ' | ', rmse_tz, ' | ', rmse_fxy, ' | ', rmse_txy, ' | ', rmse_f, ' | ', rmse_t)
+# print('----------------------------------------------------------------------------------------------------------------')
 
 print("================================================= As A Comparison ==============================================")
 print('--------------------------------RMSEs with vector error (body frame and m=0.772kg)------------------------------')
