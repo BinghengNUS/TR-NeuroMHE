@@ -6,7 +6,7 @@ The ***Trust-Region Neural Moving Horizon Estimation (TR-NeuroMHE)*** is an adap
 ![plot_in_github](https://github.com/BinghengNUS/TR-NeuroMHE/assets/70559054/84707962-c0f2-40ac-ae6a-63287116c80c)
 
 Please find out more details in 
-   * our paper https://arxiv.org/abs/2309.05955
+   * our paper (accepted by ICRA 2024) https://arxiv.org/abs/2309.05955
    * NeuroMHE trained using gradient descent https://github.com/RCL-NUS/NeuroMHE
 
 
