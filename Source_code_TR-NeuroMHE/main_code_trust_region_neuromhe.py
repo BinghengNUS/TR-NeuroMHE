@@ -145,7 +145,8 @@ def Train():
     b_1          = np.reshape(np.random.uniform(-1/np.sqrt(D_in),1/np.sqrt(D_in),D_h),(1,D_h))
     b_2          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_h),(1,D_h))
     b_o          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_out),(1,D_out))
-    #---Initialization of weights using Kaiming method---#
+    #---Initialization of weights using Kaiming method---# 
+    # The default initialization method in PyTorch (https://pytorch.org/docs/stable/generated/torch.nn.Linear.html#torch.nn.Linear)
     w_1          = np.reshape(np.random.uniform(-1/np.sqrt(D_in),1/np.sqrt(D_in),D_in*D_h),(1,D_in*D_h))
     w_2          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_h**2),(1,D_h**2))
     w_o          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_h*D_out),(1,D_h*D_out))
