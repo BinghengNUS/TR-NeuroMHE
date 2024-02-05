@@ -140,8 +140,8 @@ def chainRule_hessian(epsilon, gmin, tunable_para):
     return weight_hess
 
 def Train():
-    # Initialization of network learnable parameters (Kaiming and LeCun method)
-    #---Initialization of bias using LeCun method---#
+    # Initialization of network learnable parameters (Kaiming method)
+    #---Initialization of bias using Kaiming method---#
     b_1          = np.reshape(np.random.uniform(-1/np.sqrt(D_in),1/np.sqrt(D_in),D_h),(1,D_h))
     b_2          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_h),(1,D_h))
     b_o          = np.reshape(np.random.uniform(-1/np.sqrt(D_h),1/np.sqrt(D_h),D_out),(1,D_out))
