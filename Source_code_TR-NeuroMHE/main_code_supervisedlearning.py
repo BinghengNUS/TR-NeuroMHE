@@ -201,7 +201,7 @@ def Train():
             # Ground_truth list
             ground_truth = []  
 
-            for j in range(n_start,n_start+100): # these data points covers a wide range of velocity from 0.05 to 16.38 m/s 
+            for j in range(n_start,n_start+100): # these data points covers a limited range of velocity
                 # Take the measurements from the dataset
                 v_B = np.array([[velx_seq[n*j], vely_seq[n*j], velz_seq[n*j]]]).T
                 q = np.array([[qw_seq[n*j], qx_seq[n*j], qy_seq[n*j], qz_seq[n*j]]]).T
