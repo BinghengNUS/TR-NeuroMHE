@@ -1057,9 +1057,12 @@ class KF_gradient_solver:
             Hess_dldx = self.Kloss * Hdlds_fn(xpa0=x_mhe)['Hdldsf'].full()
             Hxdp += np.transpose(dxdp)@Hess_dldx@dxdp
             Hdp  += np.kron(dldx,np.identity(self.n_para))@hxdp
+            # Hdp  += np.kron(np.identity(self.n_para),dldx)@hxdp # correct order in the Kronecker product will cause numerical issues such as complex eigenvalues in Line 625, see 'Discussion on Kronecker Product' PDF for details.
             dp   += dldx@dxdp
         Grad_dldn = dp@dpdn
         Hess_dldn = np.transpose((Hxdp + Hdp)@dpdn)@dpdn + np.kron(dp,np.identity(self.n_neur))@hess_dpdn
+        # Hess_dldn = np.transpose((Hxdp + Hdp)@dpdn)@dpdn + np.kron(np.identity(self.n_neur),dp)@hess_dpdn # will cause numerical issues such as complex eigenvalues in Line 625
+        # Hess_dldn = np.transpose(dpdn)@(Hxdp + Hdp)@dpdn + np.kron(dp,np.identity(self.n_neur))@hess_dpdn # Even slightly modifying the first term does not affect the training results, showing superior robustness of our method.
         return Grad_dldn, Hess_dldn, loss_track
 
 
