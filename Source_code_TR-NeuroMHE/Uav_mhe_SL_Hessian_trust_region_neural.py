@@ -622,7 +622,7 @@ class Trust_region:
         # Eigenvalue decomposition of Hess_dldn
         #----Make the Hessian symmatric----#
         Hess_dldn = (Hess_dldn + Hess_dldn.T)/2
-        Eigenvalues, Eigenvectors = LA.eig(Hess_dldn)
+        Eigenvalues, Eigenvectors = LA.eig(Hess_dldn) # take their real parts if complex eigenvalues are encountered for the inversed Kronecker product
         Lambda = np.diag(Eigenvalues)
 
         # Formulate the NLP
@@ -1061,7 +1061,7 @@ class KF_gradient_solver:
             dp   += dldx@dxdp
         Grad_dldn = dp@dpdn
         Hess_dldn = np.transpose((Hxdp + Hdp)@dpdn)@dpdn + np.kron(dp,np.identity(self.n_neur))@hess_dpdn
-        # Hess_dldn = np.transpose((Hxdp + Hdp)@dpdn)@dpdn + np.kron(np.identity(self.n_neur),dp)@hess_dpdn # will cause numerical issues such as complex eigenvalues in Line 625
+        # Hess_dldn = np.transpose(dpdn)@(Hxdp + Hdp)@dpdn + np.kron(np.identity(self.n_neur),dp)@hess_dpdn # will cause numerical issues such as complex eigenvalues in Line 625
         # Hess_dldn = np.transpose(dpdn)@(Hxdp + Hdp)@dpdn + np.kron(dp,np.identity(self.n_neur))@hess_dpdn # Even slightly modifying the first term does not affect the training results, showing superior robustness of our method.
         return Grad_dldn, Hess_dldn, loss_track
 
