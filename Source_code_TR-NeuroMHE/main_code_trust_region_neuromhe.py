@@ -174,12 +174,19 @@ def Train():
     mean_loss0 = 0
     # Initial network parameters
     nn_para = nn_para0
-    # Thresholds of the trust-region method (chosen by trial and error)
+    # Thresholds of the trust-region method (chosen by trial and error) for the inversed Kronecker product in Eq(10)
     t1,t2,t3   = 0, 0.01, 0.9
     chi1, chi2 = 0.99, 2
     upperb     = 1e3
     # Initial trust-region radius
     radius     = 1e1
+
+    ## Thresholds of the trust-region method (chosen by trial and error) for the Kronecker product in Eq(10) that aligns with Theorem 2.2
+    #t1,t2,t3   = 0, 0, 5
+    #chi1, chi2 = 0.994, 5
+    #upperb     = 1e3
+    ## Initial trust-region radius
+    #radius     = 1.5e2
 
     while delta_cost >= eps: #flag ==0
         if n_ep==1:
